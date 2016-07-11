@@ -1,0 +1,29 @@
+{
+  "name": "stateofbeing",
+  "version": "0.1.0",
+  "description": "A collection of css defined states",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass --output-style expanded -w src -o dist",
+    "test": "node-sass src -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackmcpickle/stateofbeing.git"
+  },
+  "keywords": [
+    "sass",
+    "states",
+    "css",
+    "scss"
+  ],
+  "author": "Jack McNicol <jackmcpickle@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackmcpickle/stateofbeing/issues"
+  },
+  "homepage": "https://github.com/jackmcpickle/stateofbeing#readme",
+  "devDependencies": {
+    "node-sass": "^3.8.0"
+  }
+}
