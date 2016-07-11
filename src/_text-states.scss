@@ -1,0 +1,8 @@
+$text-rule-prefix: 'text' !default;
+$state-text-aligns: left right center justify !default;
+
+@each $align in $state-text-aligns {
+  .#{$text-rule-prefix}-#{$align} {
+    text-align: $align !important;
+  }
+}

@@ -1,0 +1,20 @@
+$primary-color: red !default;
+$secondary-color: blue !default;
+$tertiary-color: orange !default;
+$quaternary-color: yellow !default;
+
+$ranking-state-property: color background !default;
+
+$state-colors: (primary: $primary-color,
+                secondary: $secondary-color,
+                tertiary: $tertiary-color,
+                quaternary: $quaternary-color
+                ) !default;
+
+@each $property in $ranking-state-property {
+  @each $color-name, $color in $state-colors {
+    .is-#{$color-name}-#{$property} {
+      #{$property}: $color !important;
+    }
+  }
+}

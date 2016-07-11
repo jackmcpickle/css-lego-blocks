@@ -1,0 +1,10 @@
+$padding-rule-prefix: 'padding' !default;
+$padding-rule-value: 0 !default;
+$state-paddings: top right bottom left !default;
+
+
+@each $padding in $state-paddings {
+  .has-#{$padding-rule-prefix}-#{$padding} {
+    padding-#{$padding}: $padding-rule-value !important;
+  }
+}

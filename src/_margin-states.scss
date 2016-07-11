@@ -1,0 +1,9 @@
+$margin-rule-prefix: 'margin' !default;
+$margin-rule-value: 0 !default;
+$state-margins: top right bottom left !default;
+
+@each $margin in $state-margins {
+  .has-#{$margin-rule-prefix}-#{$margin} {
+    margin-#{$margin}: $margin-rule-value !important;
+  }
+}

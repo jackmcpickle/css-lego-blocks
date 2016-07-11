@@ -1,0 +1,19 @@
+$direction-rule-prefix: 'dir' !default;
+$direction-rule-value: 0 !default;
+$direction-states: top right bottom left !default;
+
+@each $direction in $direction-states {
+  .#{'is-' + $direction-rule-prefix + '-' + $direction} {
+    #{$direction}: $direction-rule-value !important;
+  }
+}
+
+$position-rule-prefix: 'pos' !default;
+$position-rule-property: position !default;
+$position-states: relative absolute fixed static !default;
+
+@each $position in $position-states {
+  .#{'has-' + $position + '-' + $position-rule-prefix} {
+    #{$position-rule-property}: $position !important;
+  }
+}

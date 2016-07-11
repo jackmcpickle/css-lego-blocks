@@ -1,0 +1,21 @@
+$xs-size: 100px !default;
+$sm-size: 200px !default;
+$md-size: 300px !default;
+$lg-size: 400px !default;
+$xl-size: 500px !default;
+
+$size-properties: width !default;
+
+$size-states: (
+                tiny: $xs-size,
+                small: $sm-size,
+                medium: $md-size,
+                large: $lg-size,
+                huge: $xl-size
+              ) !default;
+
+@each $size-name, $size in $size-states {
+  .is-#{$size-name} {
+    #{$size-properties}: $size !important;
+  }
+}
