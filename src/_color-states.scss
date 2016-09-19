@@ -3,7 +3,7 @@ $secondary-color: blue !default;
 $tertiary-color: orange !default;
 $quaternary-color: yellow !default;
 
-$ranking-state-property: color background !default;
+$color-properties: color background !default;
 
 $state-colors: (primary: $primary-color,
                 secondary: $secondary-color,
@@ -11,9 +11,9 @@ $state-colors: (primary: $primary-color,
                 quaternary: $quaternary-color
                 ) !default;
 
-@each $property in $ranking-state-property {
+@each $property in $color-properties {
   @each $color-name, $color in $state-colors {
-    .is-#{$color-name}-#{$property} {
+    .#{$property + '-' + $color-name} {
       #{$property}: $color !important;
     }
   }

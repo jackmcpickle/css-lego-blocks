@@ -4,18 +4,20 @@ $md-size: 300px !default;
 $lg-size: 400px !default;
 $xl-size: 500px !default;
 
-$size-properties: width !default;
+$size-properties: width height !default;
 
 $size-states: (
-                tiny: $xs-size,
-                small: $sm-size,
-                medium: $md-size,
-                large: $lg-size,
-                huge: $xl-size
+                xs: $xs-size,
+                sm: $sm-size,
+                md: $md-size,
+                lg: $lg-size,
+                xl: $xl-size
               ) !default;
 
-@each $size-name, $size in $size-states {
-  .is-#{$size-name} {
-    #{$size-properties}: $size !important;
+@each $property in $size-properties {
+  @each $size-name, $size in $size-states {
+    .#{$property + '-' + $size-name} {
+      #{$property}: $size !important;
+    }
   }
 }

@@ -1,19 +1,23 @@
-$direction-rule-prefix: 'dir' !default;
-$direction-rule-value: 0 !default;
-$direction-states: top right bottom left !default;
+$position-prefix: 'pos' !default;
+$position-property: position !default;
+$position-states: relative absolute fixed static !default;
 
-@each $direction in $direction-states {
-  .#{'is-' + $direction-rule-prefix + '-' + $direction} {
-    #{$direction}: $direction-rule-value !important;
+@each $property in $position-property {
+  @each $position in $position-states {
+    .#{$position-prefix + '-' + $position} {
+      #{$property}: $position !important;
+    }
   }
 }
 
-$position-rule-prefix: 'pos' !default;
-$position-rule-property: position !default;
-$position-states: relative absolute fixed static !default;
+$float-prefix: 'float' !default;
+$float-property: float !default;
+$float-states: left right !default;
 
-@each $position in $position-states {
-  .#{'has-' + $position + '-' + $position-rule-prefix} {
-    #{$position-rule-property}: $position !important;
+@each $property in $float-property {
+  @each $float in $float-states {
+    .#{$float-prefix + '-' + $float} {
+      #{$property}: $float !important;
+    }
   }
 }

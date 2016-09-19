@@ -1,0 +1,26 @@
+$font-prefix: 'font' !default;
+
+$xs-font-size: 0.7rem !default;
+$sm-font-size: 0.85rem !default;
+$normal-font-size: 1rem !default;
+$md-font-size: 2rem !default;
+$lg-font-size: 3rem !default;
+$xl-font-size: 4rem !default;
+
+$font-property: font-size !default;
+
+$font-states: (
+                xs: $xs-font-size,
+                sm: $sm-font-size,
+                base: $normal-font-size,
+                md: $md-font-size,
+                lg: $lg-font-size,
+                xl: $xl-font-size
+              ) !default;
+
+
+@each $font-size, $size in $font-states {
+  .#{$text-prefix + '-' + $font-size} {
+    #{$font-property}: $size !important;
+  }
+}

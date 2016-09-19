@@ -1,10 +1,20 @@
-$padding-rule-prefix: 'padding' !default;
-$padding-rule-value: 0 !default;
-$state-paddings: top right bottom left !default;
+$padding-prefix: 'padding' !default;
+$padding-value: 1rem !default;
+$padding-states: top right bottom left !default;
 
 
-@each $padding in $state-paddings {
-  .has-#{$padding-rule-prefix}-#{$padding} {
-    padding-#{$padding}: $padding-rule-value !important;
+@each $padding in $padding-states {
+  .#{$padding-prefix + '-' + $padding} {
+    padding-#{$padding}: $padding-value !important;
+  }
+}
+
+.#{$padding-prefix + '-off'} {
+  padding: 0 !important;
+}
+
+@each $padding in $padding-states {
+  .#{$padding-prefix + '-off-' + $padding} {
+    padding-#{$padding}: 0 !important;
   }
 }
